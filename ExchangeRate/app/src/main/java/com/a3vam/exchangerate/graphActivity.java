@@ -58,7 +58,6 @@ public class graphActivity extends Activity {
                     entries.add(entry);
                     dates.add(date);
                     i++;
-
                 }
                 c.close();
                 IAxisValueFormatter formatter = new IAxisValueFormatter() {
@@ -71,8 +70,7 @@ public class graphActivity extends Activity {
                 };
 
 
-
-                LineDataSet dataSet = new LineDataSet(entries, currency); // add entries to dataset
+                LineDataSet dataSet = new LineDataSet(entries, currency);
                 dataSet.setColor(Color.RED);
                 dataSet.setValueTextColor(Color.BLUE);
 
@@ -87,7 +85,7 @@ public class graphActivity extends Activity {
 
                 chart.setDescription(des);
                 XAxis xAxis = chart.getXAxis();
-                xAxis.setGranularity(0.1f); // minimum axis-step (interval) is 1
+                xAxis.setGranularity(0.1f);
                 xAxis.setGranularityEnabled(true);
                 xAxis.setValueFormatter(formatter);
                 chart.invalidate(); // refresh

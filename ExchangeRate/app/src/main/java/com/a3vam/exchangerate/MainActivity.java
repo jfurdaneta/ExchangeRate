@@ -34,11 +34,6 @@ public class MainActivity extends Activity {
     private RestManager restManager;
     private RateDbHelper db;
     ProgressDialog progress;
-    /**
-     * ATTENTION: This was auto-generated to implement the App Indexing API.
-     * See https://g.co/AppIndexing/AndroidStudio for more information.
-     */
-
     private Holder vh;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,9 +43,7 @@ public class MainActivity extends Activity {
         actionBar.hide();
         final EditText etAmount = (EditText) this.findViewById(R.id.etAmount);
         Button ivCalculate = (Button) this.findViewById(R.id.ivCalculate);
-
         vh = new Holder();
-
         final ImageButton ibGbp = (ImageButton)(this.findViewById(R.id.ibGbp));
         final ImageButton ibEur=(ImageButton)(this.findViewById(R.id.ibEur));
         final ImageButton ibJpy=(ImageButton)(this.findViewById(R.id.ibJpy));
@@ -83,7 +76,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View view) {
 
-                //if (isOnline()){
+                //if (isOnline()){ // offline not available for now
                 if (true){
                     restManager = new RestManager();
                     Call<Coin> coinCall = restManager.getCoinServices().getCoin();
@@ -142,7 +135,6 @@ public class MainActivity extends Activity {
                     vh.getTvBRL().setText(String.format("%.2f",(Double.parseDouble(BRL.get("value").toString()) * Double.parseDouble(etAmount.getText().toString()))));
                     vh.getTvGBP().setText(String.format("%.2f",(Double.parseDouble(GBP.get("value").toString()) * Double.parseDouble(etAmount.getText().toString())))) ;
                     vh.getTlResults().setVisibility(View.VISIBLE);
-
                     vh.getTvOffline().setText(vh.getTvOffline().getText() + " " + EUR.get("date").toString());
                 }
 
@@ -167,8 +159,8 @@ private ContentValues getOfflineData(String curr){
     return (cont );
 }
     private void loadIntent(String currency){
-        Log.w("Clicked", currency.toString());
-        Toast.makeText(this, "Clicked: "+ currency.toString(), Toast.LENGTH_LONG);
+        Log.w("Clicked", currency);
+        Toast.makeText(this, "Clicked: "+ currency, Toast.LENGTH_LONG);
         Intent intent = new Intent(getBaseContext(), graphActivity.class);
         intent.putExtra("CURRENCY", currency);
         startActivity(intent);
@@ -178,9 +170,7 @@ private ContentValues getOfflineData(String curr){
         TextView tvEUR;
         TextView tvJPY;
         TextView tvBRL;
-
         TextView tvOffline;
-
         TableLayout tlResults;
 
         public Holder() {
@@ -216,11 +206,7 @@ private ContentValues getOfflineData(String curr){
         }
     }
 
-    private enum CURRENCY_VAL{
-       GBP,
-        EUR,
-        JPY,
-        BRL;    }
+
     protected boolean isOnline() {
         ConnectivityManager connec = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
 

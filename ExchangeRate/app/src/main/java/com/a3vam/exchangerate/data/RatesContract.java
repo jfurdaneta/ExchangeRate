@@ -12,7 +12,6 @@ public class RatesContract  implements BaseColumns {
 
     public static abstract class RatesEntry implements BaseColumns {
         public static final String TABLE_NAME = "coin";
-
         public static final String date = "date";
         public static final String currency = "currency";
         public static final String value = "value";

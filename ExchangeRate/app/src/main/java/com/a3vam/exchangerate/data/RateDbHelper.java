@@ -57,18 +57,6 @@ public class RateDbHelper extends SQLiteOpenHelper {
         Cursor c = db.rawQuery(query,null);
 
         if (c.getCount() > 0){
-            if(c.moveToFirst()){
-                do{
-                    //assing values
-                    String column1 = c.getString(0);
-                    String column2 = c.getString(1);
-                    String column3 = c.getString(2);
-                    String column4 = c.getString(3);
-                    //Do something Here with values
-                    Log.w("valores",column1 + " - " + column2 + " " + column3 + " " + column4);
-
-                }while(c.moveToNext());
-            }
             c.close();
             return true;
         }else{
@@ -88,7 +76,6 @@ public class RateDbHelper extends SQLiteOpenHelper {
     }
     public Cursor RateSelectCursor(String curr){
         String query = "select * from " + RatesContract.RatesEntry.TABLE_NAME + " WHERE currency='" + curr + "'";
-        //String query = "select * from " + RatesContract.RatesEntry.TABLE_NAME;
         SQLiteDatabase db = getReadableDatabase();
         Cursor c;
         c = db.rawQuery(query, null);
