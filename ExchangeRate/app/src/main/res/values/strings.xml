@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">ExchangeRate</string>
+
+    <string name="ctype_entry">Choose a coin type</string>
+    <string-array name="ctype_array">
+        <item>Choose a type of exchange</item>
+        <item>UK Pounds (GBP)</item>
+        <item>EU Euro (EUR)</item>
+        <item>Japan Yen (JPY)</item>
+        <item>Brazil Reais (BRL)</item>
+    </string-array>
+
+
+    <string name="chart_nodata">There is not info for this currency</string>
+    <string name="chart_desc">This graph show you the evolution on time of this currency</string>
+    <string name="btn">Calculate exchange rate</string>
+
+</resources>

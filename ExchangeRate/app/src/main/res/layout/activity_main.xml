@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.a3vam.exchangerate.MainActivity"
+    android:background="@color/app_background"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="vertical"
+        android:layout_marginBottom="30dp">
+        
+        <ImageView
+            android:layout_width="152dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/top"
+            android:layout_gravity="center_horizontal"/>
+        
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Set the amount to calculate"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/tvSetAm" />
+
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/etAmount"
+            android:layout_alignTop="@+id/textView2"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10dp"/>
+
+        <Button
+            android:text="@string/btn"
+            android:layout_width="287dp"
+            android:layout_height="57dp"
+            android:id="@+id/ivCalculate"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/blanco"
+            android:background="@color/tecnoblue"/>
+
+
+
+
+    </LinearLayout>
+<!--
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="#b5b5b5"
+        android:listSelector="@drawable/list_selector"
+        />
+        -->
+       <TableLayout
+           android:id="@+id/tlResults"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+        <TableRow
+            android:minHeight="50dp"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:gravity="center_horizontal">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CURRENCY"
+                    android:layout_marginRight="50dp"
+                    android:layout_marginTop="1sp"
+                    android:layout_gravity="center_vertical"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="AMOUNT"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="1sp"
+                    />
+
+            </LinearLayout>
+        </TableRow>
+       <TableRow
+           android:minHeight="50dp"
+           android:layout_height="wrap_content"
+           android:layout_width="fill_parent"
+           android:gravity="center_horizontal">
+               <LinearLayout android:id="@+id/llGBP"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal"
+                   android:layout_gravity="center_horizontal">
+
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="UK Pounds (GBP)"
+                       android:layout_marginRight="50dp"
+                       android:layout_marginTop="1sp"
+                       android:layout_gravity="center_vertical"
+                       />
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Amount"
+                       android:layout_gravity="center_vertical"
+                       android:layout_marginTop="1sp"
+                       android:id="@+id/tvAmountGBP"
+                       android:layout_marginRight="50dp"/>
+                   <ImageButton
+                       android:id="@+id/ibGbp"
+                       android:layout_width="30dp"
+                       android:layout_height="30dp"
+                       android:background="@drawable/start"/>
+
+               </LinearLayout>
+       </TableRow>
+        <TableRow
+            android:minHeight="50dp"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:gravity="center_horizontal">
+            <LinearLayout android:id="@+id/llEUR"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="EU Euro (EUR)"
+                    android:layout_marginRight="50dp"
+                    android:layout_marginTop="1sp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Amount"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="1sp"
+                    android:id="@+id/tvAmountEUR"
+                    android:layout_marginRight="50dp"/>
+                <ImageButton
+                    android:id="@+id/ibEur"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/start"/>
+
+            </LinearLayout>
+        </TableRow>
+        <TableRow
+            android:minHeight="50dp"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:gravity="center_horizontal">
+            <LinearLayout android:id="@+id/LLJPY"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Japan Yen ­ (JPY)"
+                    android:layout_marginRight="50dp"
+                    android:layout_marginTop="1sp"
+                   />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Amount"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="1sp"
+                    android:id="@+id/tvAmountJPY"
+                    android:layout_marginRight="50dp"/>
+                <ImageButton
+                    android:id="@+id/ibJpy"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/start"/>
+
+            </LinearLayout>
+        </TableRow>
+        <TableRow
+            android:minHeight="50dp"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:gravity="center_horizontal">
+            <LinearLayout android:id="@+id/LLBRL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Brazil Reais ­ (BRL)"
+                    android:layout_marginRight="50dp"
+                    android:layout_marginTop="1sp"
+                   />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Amount"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="1sp"
+                    android:id="@+id/tvAmountBRL"
+                    android:layout_marginRight="50dp"/>
+                <ImageButton
+                    android:id="@+id/ibBrl"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/start"/>
+
+            </LinearLayout>
+        </TableRow>
+           <TableRow
+               android:minHeight="50dp"
+               android:layout_height="wrap_content"
+               android:layout_width="fill_parent"
+               android:gravity="center_horizontal">
+
+               <LinearLayout android:id="@+id/llOffline"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal"
+                   android:layout_gravity="center_horizontal"
+                   >
+
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="There is not conection, data from "
+                       android:layout_gravity="center_vertical"
+                       android:layout_marginTop="1sp"
+                       android:id="@+id/tvOffline"
+                       android:visibility="gone"/>
+
+
+               </LinearLayout>
+           </TableRow>
+    </TableLayout>
+
+</LinearLayout>
